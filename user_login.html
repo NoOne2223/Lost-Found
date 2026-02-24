@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="user_login.css">
+
+  <title>Lost & Found System</title>
+</head>
+<body>
+
+ <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-semibold text-primary" href="#">
+      <i class="fa-solid fa-box-open me-2"></i>
+      Lost & Found System
+    </a>
+
+    <!-- زر الـ 3 شحطات -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- القائمة -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Report Lost</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Report Found</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+ <!-- MAIN CONTENT -->
+<main class="flex-fill">
+  <div class="hero">
+    <!-- صورة الخلفية -->
+    <img src="photo.jpg" alt="Airport" class="hero-img" />
+
+    <!-- طبقة شفافة فوق الصورة -->
+    <div class="overlay"></div>
+
+    <!-- المحتوى فوق الصورة -->
+    <div class="hero-content">
+      <div class="portal-title">
+        <i class="fa-solid fa-location-dot"></i> OFFICIAL LOST & FOUND PORTAL
+      </div>
+      <h2>Lost Something? <span class="highlight">We're Here to Help.</span></h2>
+      <p>
+        Track and recover items lost at SkyPort International. Our dedicated recovery team processes thousands of items daily to reunite them with their owners.
+      </p>
+      <div class="buttons">
+        <a href="#" class="btn btn-lost">
+          <i class="fa-solid fa-triangle-exclamation"></i> Report Lost Item
+        </a>
+        <a href="#" class="btn btn-found">
+          <i class="fa-solid fa-plus"></i> Report Found Item
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<br>
+
+  <!-- FOOTER -->
+  <footer class="pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-semibold">Lost & Found</h5>
+          <p>
+            A secure and organized system to manage lost and found items efficiently.
+          </p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h6 class="fw-semibold">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Report Lost</a></li>
+            <li><a href="#">Report Found</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h6 class="fw-semibold">Contact</h6>
+          <p class="mb-1">
+            <i class="fa-solid fa-envelope me-2"></i> support@lostfound.com
+          </p>
+          <p>
+            <i class="fa-solid fa-phone me-2"></i> +962 7X XXX XXXX
+          </p>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="text-center small">
+        © 2026 Lost & Found Management System. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggler = document.querySelector(".navbar-toggler");
+      const menu = document.querySelector("#navbarContent");
+
+      toggler.addEventListener("click", () => {
+        if (menu.classList.contains("show")) {
+          menu.classList.remove("fade-in");
+        } else {
+          menu.classList.add("fade-in");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

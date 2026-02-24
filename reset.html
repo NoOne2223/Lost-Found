@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="registration.css">
+  <title>Reset Password</title>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Reset Password</h2>
+    <p>
+        Your username is fetched automatically. Please enter your new password below.
+    </p>
+
+    <form id="resetForm">
+        <!-- اسم المستخدم يظهر من الـ API -->
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="resetUsername" value="<!-- API will insert username here -->" readonly>
+        </div>
+
+        <div class="input-group">
+            <label>New Password</label>
+            <input type="password" id="newPassword" placeholder="Enter new password" required>
+        </div>
+
+        <div class="input-group">
+            <label>Confirm New Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+        </div>
+
+        <button type="submit">Reset Password</button>
+    </form>
+
+    <div class="extra">
+        <p>Remembered your password? <a href="login.html">Login</a></p>
+    </div>
+</div>
+
+</body>
+</html>

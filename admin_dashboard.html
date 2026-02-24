@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin_dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Lost & Found</h2>
+    <ul>
+        <li><a href="admin_dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="lost_reports_admin.html">Lost Reports</a></li>
+        <li><a href="found_reports_admin.html">Found Reports</a></li>
+        <li><a href="staff_manage.html">Staff</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">⚙️ Settings</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" id="langToggle">🌐 AR</a></li>
+                <li><a href="#" id="themeToggle">🌙 Dark Mode</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <header>
+        <h2>Admin Dashboard</h2>
+        <div class="notifications">🔔 <span class="badge">3</span></div>
+    </header>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">Lost Reports <h3>120</h3></div>
+        <div class="card">Found Reports <h3>95</h3></div>
+        <div class="card">Matches <h3>45</h3></div>
+        <div class="card">Handovers <h3>30</h3></div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+        <canvas id="categoryChart"></canvas>
+        <canvas id="reportsChart"></canvas>
+    </div>
+
+    <!-- Table -->
+    <div class="table-section">
+        <h3>Recent Reports</h3>
+        <input type="text" id="searchInput" placeholder="Search reports...">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="reportTable">
+                <tr><td>1</td><td>Black Bag</td><td>Bags</td><td>Lost</td><td>2026-02-10</td></tr>
+                <tr><td>2</td><td>iPhone</td><td>Electronics</td><td>Found</td><td>2026-02-11</td></tr>
+                <tr><td>3</td><td>Passport</td><td>Documents</td><td>Lost</td><td>2026-02-12</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Export -->
+    <div class="export">
+        <button onclick="exportReports()">Export Reports (PDF)</button>
+    </div>
+</div>
+
+<script src="admin_dashboard.js">
+
+</script>
+
+</body>
+</html>

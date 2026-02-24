@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matches - Admin</title>
+<link rel="stylesheet" href="matches.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Lost & Found</h2>
+    <ul>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="lost_reports_admin.html">Lost Reports</a></li>
+        <li><a href="found_reports_admin.html">Found Reports</a></li>
+        <li><a href="staff_manage.html">Staff</a></li>
+        <li><a href="matches.html" class="active">Matches</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">⚙️ Settings</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" id="langToggle">🌐 AR</a></li>
+                <li><a href="#" id="themeToggle">🌙 Dark Mode</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <header>
+        <h2 id="pageTitle">Matches (Admin)</h2>
+    </header>
+
+    <div class="table-section">
+        <h3 id="tableTitle">Lost & Found Matches</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th id="thLost">Lost Report</th>
+                    <th id="thFound">Found Report</th>
+                    <th id="thSim">Similarity %</th>
+                </tr>
+            </thead>
+            <tbody id="matchesTable">
+                <!-- النتائج تظهر هنا -->
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="export">
+        <button id="exportBtn">Export as PDF</button>
+    </div>
+<script src="matches.js"></script>
+</body>
+</html>

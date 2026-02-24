@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Manage Staff</title>
+<link rel="stylesheet" href="staff_manage.css">
+</head>
+<body class="light-mode" data-lang="en">
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Lost & Found</h2>
+    <ul>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="lost_reports_admin.html">Lost Reports</a></li>
+        <li><a href="found_reports_admin.html">Found Reports</a></li>
+        <li><a href="staff_manage.html" class="active">Staff</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <!-- Settings Dropdown -->
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">⚙️ Settings</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" id="langToggle">🌐 AR</a></li>
+                <li><a href="#" id="themeToggle">🌙 Dark Mode</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+
+    <!-- Login / Staff Form Container -->
+    <div class="login-container">
+        <h2>Manage Staff</h2>
+        <form id="staffForm">
+            <div class="input-group">
+                <label>Staff Email</label>
+                <input type="email" id="staffEmail" placeholder="Enter staff email" required>
+            </div>
+            <div class="buttons">
+                <button type="submit" id="addStaffBtn">➕ Add Staff</button>
+                <button type="button" id="removeStaffBtn">✖ Remove Staff</button>
+            </div>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <!-- Employees Table Container -->
+    <div class="table-wrapper">
+        <div class="table-section">
+            <h3>Employees List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Last Update</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="staffTable">
+                    <tr>
+                        <td>ahmad@example.com</td>
+                        <td class="status-active">Active</td>
+                        <td>2026-02-22 03:15</td>
+                        <td>
+                            <button class="remove-btn">✖ Remove</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>sara@example.com</td>
+                        <td class="status-removed">Removed</td>
+                        <td>2026-02-21 22:40</td>
+                        <td>
+                            <button class="add-btn">➕ Add</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="staff_manage.js"></script>
+</body>
+</html>

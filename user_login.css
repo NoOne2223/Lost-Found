@@ -1,0 +1,273 @@
+:root {
+    --primary: #283F55;
+    --secondary: #E57D29;
+    --accent: #93A489;
+    --dark: #333333;
+    --light-gray: #F2F4F8;
+}
+
+/* ================= GENERAL ================= */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark);
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    border-bottom: 3px solid var(--primary);
+    min-height: 80px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff; /* الخلفية بيضاء */
+}
+
+.navbar-brand {
+    color: var(--primary) !important;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.nav-link {
+    color: var(--dark) !important;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.nav-link:hover {
+    color: var(--secondary) !important;
+    text-shadow: 0 0 8px var(--secondary);
+    background-color: transparent; /* نفس تأثير التول بار */
+}
+
+/* حركة دخول للقائمة */
+.collapse.show {
+    animation: slideDown 0.4s ease forwards;
+    background-color: #fff; /* خلفية القائمة بيضاء */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+@keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+
+.hero-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--primary);
+    opacity: 0.85;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    padding: 1rem;
+}
+
+.portal-title {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.hero-content h2:hover {
+    text-shadow: 0 0 15px var(--secondary);
+}
+
+.hero-content h2 .highlight {
+    color: var(--secondary);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+}
+
+.hero-content p:hover {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-lost {
+    background-color: var(--secondary);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-lost:hover {
+    background-color: var(--secondary);
+    color: white;
+    box-shadow: 0 0 15px var(--secondary);
+    transform: scale(1.05);
+}
+
+.btn-found {
+    background-color: var(--accent);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-found:hover {
+    background-color: var(--accent);
+    color: white;
+    box-shadow: 0 0 15px var(--accent);
+    transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .hero-img {
+        height: 70vh;
+    }
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* القائمة على الشاشات الصغيرة */
+    .navbar-collapse {
+        background-color: #fff; /* خلفية بيضاء */
+        padding: 1rem;
+    }
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .nav-link {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+    }
+    .nav-link:hover {
+        color: var(--secondary) !important;
+        text-shadow: 0 0 8px var(--secondary);
+        background-color: transparent; /* نفس تأثير التول بار */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-img {
+        height: 60vh;
+    }
+    .hero-content {
+        max-width: 90%;
+        padding: 1rem;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttons .btn-lost,
+    .buttons .btn-found {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: var(--primary) !important;
+    color: white;
+    padding-top: 50px;
+}
+
+footer h5,
+footer h6 {
+    color: white !important;
+}
+
+footer p,
+footer .text-muted {
+    color: rgb(255, 255, 255) !important;
+}
+
+footer a {
+    color: rgb(255, 255, 255) !important;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--secondary) !important;
+    text-shadow: 0 0 8px var(--secondary);
+}
+
+footer hr {
+    background-color: rgba(255,255,255,0.2);
+}
+
+footer .text-center {
+    color: rgb(255, 255, 255) !important;
+}

@@ -1,0 +1,215 @@
+:root {
+    --primary: #283F55;
+    --secondary: #E57D29;
+    --accent: #93A489;
+    --light-gray: #F2F4F8;
+    --white: #ffffff;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left; /* المحتوى من اليسار لليمين */
+}
+
+/* ===== Header ===== */
+header {
+    display: flex;
+    justify-content: space-between; /* العناوين من اليسار لليمين */
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.notifications {
+    position: relative;
+    font-size: 22px;
+    color: var(--secondary);
+}
+
+.badge {
+    background: var(--secondary);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 4px 9px;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -12px;
+}
+
+/* ===== Form Section ===== */
+.form-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    margin: 25px auto;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.form-section h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start; /* العناصر من اليسار */
+}
+
+form label {
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+form input, form select, form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.3s;
+    width: 100%;
+    text-align: left; /* الكتابة من اليسار */
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: var(--secondary);
+    outline: none;
+    box-shadow: 0 0 8px rgba(229, 125, 41, 0.5);
+}
+
+/* ===== Time Range ===== */
+.time-range {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.time-range input {
+    width: 130px;
+    text-align: center;
+}
+
+/* ===== Buttons ===== */
+form button, .export button {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 15px;
+}
+
+form button:hover, .export button:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+}
+
+/* ===== Color Picker ===== */
+#itemColor {
+    width: 70px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ===== Table Section ===== */
+.table-section {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    margin: 25px auto;
+    overflow-x: auto;
+    max-width: 900px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.table-section h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: left; /* العناوين والمحتوى من اليسار لليمين */
+}
+
+table th, table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+
+table th {
+    background: var(--light-gray);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+table tr:hover {
+    background: #f9f9f9;
+}
+
+/* ===== Color Box ===== */
+.color-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: auto;
+}
+
+/* ===== Export Button ===== */
+.export {
+    margin-top: 25px;
+    text-align: left; /* زر التصدير من اليسار */
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
