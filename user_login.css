@@ -17,7 +17,6 @@ body {
     color: var(--dark);
     margin: 0;
     padding: 0;
-
     display: flex;
     flex-direction: column;
 }
@@ -36,7 +35,7 @@ main {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #fff; /* الخلفية بيضاء */
+    background-color: #fff;
 }
 
 .navbar-brand {
@@ -57,26 +56,78 @@ main {
 .nav-link:hover {
     color: var(--secondary) !important;
     text-shadow: 0 0 8px var(--secondary);
-    background-color: transparent; /* نفس تأثير التول بار */
+    background-color: transparent;
 }
 
-/* حركة دخول للقائمة */
 .collapse.show {
     animation: slideDown 0.4s ease forwards;
-    background-color: #fff; /* خلفية القائمة بيضاء */
+    background-color: #fff;
     padding: 1rem;
     border-radius: 8px;
 }
 
-@keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* ================= FILTERS ================= */
+.filters {
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: #fff;
+    padding: 1rem;
+}
+
+.filters label {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filters .form-select,
+.filters .form-control {
+    border: 1.5px solid var(--primary);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.filters .form-select:focus,
+.filters .form-control:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 8px rgba(229, 125, 41, 0.4);
+}
+
+#resetFilters {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#resetFilters:hover {
+    background-color: var(--secondary);
+    color: #fff;
+    box-shadow: 0 0 12px var(--secondary);
+}
+
+/* ================= REPORT CARDS ================= */
+.text-primary-custom {
+    color: var(--primary) !important;
+  }
+.report-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.report-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 /* ================= HERO ================= */
@@ -179,64 +230,6 @@ main {
     transform: scale(1.05);
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 992px) {
-    .hero-img {
-        height: 70vh;
-    }
-    .hero-content h2 {
-        font-size: 1.8rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    /* القائمة على الشاشات الصغيرة */
-    .navbar-collapse {
-        background-color: #fff; /* خلفية بيضاء */
-        padding: 1rem;
-    }
-    .navbar-nav {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .nav-link {
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-    }
-    .nav-link:hover {
-        color: var(--secondary) !important;
-        text-shadow: 0 0 8px var(--secondary);
-        background-color: transparent; /* نفس تأثير التول بار */
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-img {
-        height: 60vh;
-    }
-    .hero-content {
-        max-width: 90%;
-        padding: 1rem;
-    }
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-    .buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    .buttons .btn-lost,
-    .buttons .btn-found {
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 0.75rem;
-    }
-}
-
 /* ================= FOOTER ================= */
 footer {
     background-color: var(--primary) !important;
@@ -271,3 +264,133 @@ footer hr {
 footer .text-center {
     color: rgb(255, 255, 255) !important;
 }
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .hero-img {
+        height: 70vh;
+    }
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .navbar-collapse {
+        background-color: #fff;
+        padding: 1rem;
+    }
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .nav-link {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-img {
+        height: 60vh;
+    }
+    .hero-content {
+        max-width: 90%;
+        padding: 1rem;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttons .btn-lost,
+    .buttons .btn-found {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 0.75rem;
+    }
+}
+/* ===== Dark Mode ===== */
+body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  /* Navbar */
+  body.dark-mode .navbar {
+    background-color: #1f1f1f;
+    border-bottom: 3px solid var(--secondary);
+  }
+  
+  body.dark-mode .navbar-brand {
+    color: var(--secondary) !important;
+  }
+  
+  /* Hero */
+  body.dark-mode .overlay {
+    background-color: #000;
+    opacity: 0.7;
+  }
+  body.dark-mode .hero-content h2,
+  body.dark-mode .hero-content p {
+    color: #eaeaea;
+  }
+  body.dark-mode .hero-content .highlight {
+    color: var(--secondary);
+  }
+  
+  /* Filters */
+  body.dark-mode .filters {
+    background-color: #1f1f1f;
+    border-color: var(--secondary);
+  }
+  body.dark-mode .filters label {
+    color: var(--secondary);
+  }
+  body.dark-mode .filters .form-select,
+  body.dark-mode .filters .form-control {
+    background-color: #2a2a2a;
+    color: #eaeaea;
+    border-color: var(--secondary);
+  }
+  
+  /* Cards */
+  body.dark-mode .report-card {
+    background-color: #1f1f1f;
+    color: #eaeaea;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  }
+  body.dark-mode .report-info h6 {
+    color: var(--secondary);
+  }
+  
+  /* Footer */
+  body.dark-mode footer {
+    background-color: #1f1f1f !important;
+    color: #eaeaea !important;
+  }
+  body.dark-mode footer a {
+    color: var(--secondary) !important;
+  }
+  body.dark-mode footer h5,
+  body.dark-mode footer h6 {
+    color: var(--secondary) !important;
+  }
